@@ -1,0 +1,226 @@
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #f0f4f8;
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+  padding-bottom: 40px;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #004488;
+}
+
+/* Buttons */
+.btn, .btn-link {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  user-select: none;
+}
+
+.btn:hover, .btn-link:hover {
+  background-color: #004488;
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  text-align: center;
+  padding: 140px 20px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight {
+  color: #ffe600;
+}
+
+.typing {
+  border-right: 3px solid #ffe600;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink 0.7s step-end infinite;
+  font-weight: 700;
+  font-size: 2.7rem;
+}
+
+/* Typing Animation */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Sections Styling */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+section.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lists Styling */
+.skills ul, .projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skills li, .projects li {
+  background: #2575fc;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.skills li:hover, .projects li:hover {
+  background: #6a11cb;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input, textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #2575fc;
+}
+
+button.btn {
+  align-self: flex-start;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode section {
+  background: #1e1e1e;
+  box-shadow: 0 16px 32px rgb(255 255 255 / 0.1);
+}
+
+body.dark-mode a {
+  color: #90caf9;
+}
+
+body.dark-mode a:hover {
+  color: #64b5f6;
+}
+
+body.dark-mode .skills li, body.dark-mode .projects li {
+  background: #64b5f6;
+  color: #121212;
+}
+
+body.dark-mode .skills li:hover, body.dark-mode .projects li:hover {
+  background: #82cfff;
+}
+
+body.dark-mode button.btn {
+  background-color: #00529b;
+}
+
+/* Dark Mode Toggle Button */
+#darkToggle {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  padding: 10px 18px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  user-select: none;
+  background: #ffe600;
+  color: #222;
+  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.7);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#darkToggle:hover {
+  background-color: #ffdb00;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  section {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+  
+  .skills ul, .projects ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #darkToggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+}
